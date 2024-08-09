@@ -1,0 +1,220 @@
+/* General Styles */
+body {
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    background-color: #1a1e2d;
+    color: #ffffff;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+    height: 100vh;
+    position: relative;
+}
+
+/* Header and Navigation Menu */
+.header {
+    position: fixed;
+    top: 40px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 90%;
+    max-width: 1000px;
+    background: rgba(23, 21, 21, 0.131);
+    border-radius: 40px;
+    padding: 25px 40px;
+    z-index: 1000;
+    backdrop-filter: blur(10px);
+}
+
+.nav-menu {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    height: 100%;
+    font-family: 'Monoid Bold', monospace;
+    position: relative;
+}
+
+.nav-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+}
+
+.nav-list li {
+    margin-left: 50px;
+    position: relative;
+}
+
+.nav-list a {
+    text-decoration: none;
+    color: #ffffff;
+    font-weight: bold;
+    font-size: 16px;
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+    overflow: hidden;
+}
+
+/* Glitch Effect */
+@keyframes glitch-anim {
+    0% {
+        transform: translateX(0) skew(0deg);
+        opacity: 1;
+    }
+    10% {
+        transform: translateX(-10px) skew(-5deg);
+        opacity: 0.8;
+    }
+    20% {
+        transform: translateX(10px) skew(5deg);
+        opacity: 0.6;
+    }
+    30% {
+        transform: translateX(-5px) skew(-2deg);
+        opacity: 0.4;
+    }
+    40% {
+        transform: translateX(5px) skew(2deg);
+        opacity: 0.2;
+    }
+    50% {
+        transform: translateX(0) skew(0deg);
+        opacity: 1;
+    }
+    100% {
+        transform: translateX(0) skew(0deg);
+        opacity: 1;
+    }
+}
+
+.glitch {
+    position: relative;
+    display: inline-block;
+}
+
+.glitch::before,
+.glitch::after {
+    content: attr(data-text);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    color: #00bfff;
+    opacity: 0;
+    pointer-events: none;
+    z-index: -1;
+    mix-blend-mode: screen;
+}
+
+/* Apply glitch effect only on hover */
+.glitch:hover::before {
+    animation: glitch-anim 0.5s ease-in-out;
+    opacity: 1;
+}
+
+.glitch:hover::after {
+    animation: glitch-anim 0.5s ease-in-out;
+    animation-delay: 0.1s;
+    opacity: 1;
+}
+
+/* Home Section Styles */
+.home {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    padding: 20px;
+    position: relative;
+    box-sizing: border-box;
+    background: linear-gradient(to right, #1c1f2e, #637eb1); /* Fading gradient */
+}
+
+/* Align title container to match panel */
+.title-container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1px; /* Adjust gap between titles */
+    max-width: 1150px; /* Match the panel's width */
+    width: calc(100% - 80px); /* Ensure it's within the panel's width */
+    padding-left: 40px; /* Same padding-left as the panel */
+    box-sizing: border-box;
+    margin-left: 0; /* Align to the left of the panel */
+    position: absolute;
+    top: 45%;
+    left: 500px; /* Align with the left of the panel */
+    transform: translateY(-50%); /* Center vertically */
+}
+
+/* Titles Styles */
+.title-main {
+    font-family: 'Monoid Bold', monospace; /* Use the same font as the menu */
+    font-size: 1.9rem; /* Adjust size as needed */
+    font-weight: bold;
+    color: #ffffff;
+    margin: 0; /* Remove default margin */
+}
+
+.title-secondary {
+    font-family: 'Poppins', sans-serif; /* Use a bold Poppins font */
+    font-size: 3.9rem; /* Adjust size as needed */
+    font-weight: bold;
+    color: transparent; /* Hide the text color */
+    background: linear-gradient(to right, #1a2635, #4db5d8); /* Gradient color */
+    -webkit-background-clip: text; /* Clip background to text */
+    background-clip: text; /* Clip background to text */
+    margin: 0; /* Remove default margin */
+}
+
+.title-tertiary {
+    font-family: 'Poppins', sans-serif; /* Use a bold Poppins font */
+    font-size: 3.9rem; /* Adjust size as needed */
+    font-weight: bold;
+    color: #ffffff;
+    margin: 0; /* Remove default margin */
+}
+
+/* Description Styles */
+.description {
+    margin-top: 20px;
+    font-family: 'Poppins', sans-serif; /* Clean modern font */
+    font-size: 1.2rem; /* Adjust size as needed */
+    color: #ffffff;
+    line-height: 1.5;
+    max-width: 1000px; /* Match the panel’s width */
+    padding-left: 40px; /* Align with the titles */
+    box-sizing: border-box;
+}
+
+
+
+
+
+/* Separator Styles */
+.separator {
+    width: 80%; /* Adjust to fit your design */
+    max-width: 1600px; /* Match the maximum width of your sections */
+    margin: 20px auto; /* Center horizontally with some spacing */
+    border-top: 1px solid #ffffff; /* Line color and thickness */
+    opacity: 0.5; /* Adjust opacity as needed */
+    position: relative;
+    background: transparent; /* Match the page background */
+}
+
+
+/* Logo Styles */
+.logo {
+    position: fixed;
+    top: 27px; /* Adjust the margin from the top */
+    left: 50px; /* Adjust the margin from the left */
+    font-family: 'Monoid Bold', monospace; /* Use the same font as the menu */
+    
+    font-weight: bold; /* Make the font bold */
+    font-size: 1rem; /* Adjust the font size as needed */
+    color: #ffffff; /* Set the text color to white or as desired */
+    z-index: 1000; /* Ensure it appears above other elements */
+}
